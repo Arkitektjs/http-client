@@ -3,10 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
   "scripts": {
-    "dev": "ts-node-dev --respawn --transpileOnly index.ts",
+    "dev": "tsc-watch --onSuccess \"node ./dist/index.js\"",
     "build": "tsc",
-    "docs:json": "typedoc --json dist/docs.json ./src --tsconfig tsconfig.json --mode modules --exclude **/*.json",
+    "docs:json": "typedoc",
     "lint": "eslint \"{src,tests}/**/*.ts\" --config .eslintrc",
     "lint:fix": "eslint \"{src,tests}/**/*.ts\" --config .eslintrc --fix",
     "test": "jest --passWithNoTests",
@@ -18,18 +21,8 @@
     "type": "git",
     "url": "git+https://github.com/Arkitektjs/http-client.git"
   },
-  "keywords": [
-    "arkitekt",
-    "rest",
-    "graphql",
-    "request",
-    "response",
-    "client",
-    "server",
-    "browser",
-    "node"
-  ],
-  "author": "Franck DIOMANDE <fkdiomande@gmail.com>",
+  "keywords": [],
+  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Arkitektjs/http-client/issues"
@@ -46,7 +39,7 @@
     "eslint-plugin-import": "^2.20.2",
     "jest": "^25.3.0",
     "ts-jest": "^25.3.1",
-    "ts-node-dev": "^1.0.0-pre.44",
+    "tsc-watch": "^4.2.3",
     "typedoc": "^0.17.4",
     "typescript": "^3.8.3"
   }
